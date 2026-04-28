@@ -160,3 +160,156 @@ nav a{
     display:flex;
     justify-content:space-around;
 }
+
+/* Base styles remain same as your code */
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+    }
+
+    nav {
+        margin-top: 10px;
+    }
+
+    .hero {
+        flex-direction: column;
+        padding: 30px;
+        text-align: center;
+    }
+
+    .hero-left h1 {
+        font-size: 28px;
+    }
+
+    .hero-right img {
+        width: 100%;
+        max-width: 300px;
+        margin-top: 20px;
+    }
+
+    .form input,
+    .form button {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .features {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .step-box {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .why-grid {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .loan {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .loan-right img {
+        width: 100%;
+        max-width: 200px;
+        margin-top: 20px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-left h1 {
+        font-size: 22px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .main-btn,
+    .whatsapp-btn {
+        width: 100%;
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .hero {
+        flex-direction: column;
+        padding: 30px;
+        text-align: center;
+    }
+
+    .hero-right img {
+        width: 100%;
+        max-width: 300px;
+        margin-top: 20px;
+    }
+
+    .form input,
+    .form button {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .features,
+    .step-box,
+    .why-grid,
+    .loan,
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .loan-right img {
+        width: 100%;
+        max-width: 200px;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-left h1 {
+        font-size: 22px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .main-btn,
+    .whatsapp-btn {
+        width: 100%;
+        max-width: 250px;
+    }
+}
