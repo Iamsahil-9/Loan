@@ -20,7 +20,9 @@
         <a href="#">Rates & Fees</a>
         <a href="#">FAQ</a>
         <a href="#">Contact Us</a>
-        <button class="whatsapp-btn">Apply on WhatsApp</button>
+        <a href="https://wa.me/919876543210?text=Hi%20I%20want%20to%20apply%20for%20a%20loan" target="_blank">
+    <button class="whatsapp-btn"><i class="fa-brands fa-whatsapp"></i> Apply on WhatsApp</button>
+</a>
     </nav>
 </header>
 
@@ -30,12 +32,35 @@
         <h1>Find Your Financial <span>Peace of Mind</span></h1>
         <p>Get Instant Personal Loan<br><b>Up to ₹5,00,000</b></p>
 
-        <form class="form">
-            <input type="text" placeholder="Full Name">
-            <input type="text" placeholder="Mobile Number">
-            <input type="email" placeholder="Email Address">
-            <button><i class="fa-brands fa-whatsapp"></i> Get Started</button>
-        </form>
+<form class="form" onsubmit="sendToWhatsApp(event)">
+    <input type="text" id="name" placeholder="Full Name" required>
+    <input type="text" id="mobile" placeholder="Mobile Number" maxlength="10" pattern="\d{10}" required>
+    <input type="email" id="email" placeholder="Email Address" required>
+    <button type="submit"><i class="fa-brands fa-whatsapp"></i> Get Started</button>
+</form>
+
+<script>
+function sendToWhatsApp(event) {
+    event.preventDefault(); // form ko submit hone se rokta hai
+
+    // Input values nikalna
+    let name = document.getElementById("name").value;
+    let mobile = document.getElementById("mobile").value;
+    let email = document.getElementById("email").value;
+
+    // WhatsApp number (apna number daaliye)
+    let phoneNumber = "919876543210";
+
+    // Message format
+    let message = `Hi, I want to apply for a loan.%0AName: ${name}%0AMobile: ${mobile}%0AEmail: ${email}`;
+
+    // WhatsApp link
+    let url = `https://wa.me/${phoneNumber}?text=${message}`;
+
+    // Redirect to WhatsApp
+    window.open(url, "_blank");
+}
+</script>
 
         <small>By clicking ‘Get Started’, you agree to our policy.</small>
     </div>
