@@ -161,93 +161,7 @@ nav a{
     justify-content:space-around;
 }
 
-/* Base styles remain same as your code */
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .header {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 10px 20px;
-    }
-
-    nav {
-        margin-top: 10px;
-    }
-
-    .hero {
-        flex-direction: column;
-        padding: 30px;
-        text-align: center;
-    }
-
-    .hero-left h1 {
-        font-size: 28px;
-    }
-
-    .hero-right img {
-        width: 100%;
-        max-width: 300px;
-        margin-top: 20px;
-    }
-
-    .form input,
-    .form button {
-        width: 100%;
-        max-width: 300px;
-    }
-
-    .features {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .step-box {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .why-grid {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .loan {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .loan-right img {
-        width: 100%;
-        max-width: 200px;
-        margin-top: 20px;
-    }
-
-    .footer-content {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 15px;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-left h1 {
-        font-size: 22px;
-    }
-
-    .logo {
-        font-size: 18px;
-    }
-
-    .main-btn,
-    .whatsapp-btn {
-        width: 100%;
-        max-width: 250px;
-    }
-}
-
+/* Tablet and small screens */
 @media (max-width: 768px) {
     .header {
         flex-direction: column;
@@ -264,8 +178,12 @@ nav a{
 
     .hero {
         flex-direction: column;
-        padding: 30px;
+        padding: 20px;
         text-align: center;
+    }
+
+    .hero-left h1 {
+        font-size: 28px;
     }
 
     .hero-right img {
@@ -277,19 +195,58 @@ nav a{
     .form input,
     .form button {
         width: 100%;
-        max-width: 300px;
+        max-width: 320px;
     }
 
     .features,
     .step-box,
     .why-grid,
     .loan,
+    .footer {
+    background:#111;
+    color:#fff;
+    padding:30px;
+}
+
+.footer-content {
+    display:flex;
+    justify-content:space-around;
+    flex-wrap:wrap; /* allow wrapping on smaller screens */
+}
+
+.footer-content div {
+    margin:10px;
+    min-width:200px; /* ensures blocks don't shrink too much */
+}
+
+.footer h3, .footer h4 {
+    margin-bottom:10px;
+}
+
+.footer p {
+    margin:5px 0;
+}
+
+.footer .copyright {
+    text-align:center;
+    margin-top:20px;
+    font-size:14px;
+    color:#aaa;
+}
+
+/* Responsive footer */
+@media (max-width: 768px) {
     .footer-content {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 20px;
+        flex-direction:column;
+        align-items:center;
+        text-align:center;
+        gap:20px;
     }
+
+    .footer-content div {
+        min-width:auto;
+    }
+}
 
     .loan-right img {
         width: 100%;
@@ -298,6 +255,7 @@ nav a{
     }
 }
 
+/* Very small screens (phones) */
 @media (max-width: 480px) {
     .hero-left h1 {
         font-size: 22px;
@@ -312,4 +270,33 @@ nav a{
         width: 100%;
         max-width: 250px;
     }
+
+    .form input,
+    .form button {
+        max-width: 100%;
+    }
+}
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  nav {
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    width: 100%;
+    padding: 10px;
+  }
+
+  nav.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+    color: #333;
+  }
 }
