@@ -14,16 +14,19 @@
 
 
 <header class="header">
-    <div class="logo">QuickLoan</div>
-    <nav>
-        <a href="#">How it works</a>
-        <a href="#">Rates & Fees</a>
-        <a href="#">FAQ</a>
-        <a href="#">Contact Us</a>
-        <a href="https://wa.me/919167395780?text=Hi%20I%20want%20to%20apply%20for%20a%20loan" target="_blank">
-    <button class="whatsapp-btn"><i class="fa-brands fa-whatsapp"></i> Apply on WhatsApp</button>
-</a>
-    </nav>
+  <div class="logo">QuickLoan</div>
+  <nav id="nav-links">
+      <a href="#">How it works</a>
+      <a href="#">Rates & Fees</a>
+      <a href="#">FAQ</a>
+      <a href="#">Contact Us</a>
+      <a href="https://wa.me/919167395780?text=Hi%20I%20want%20to%20apply%20for%20a%20loan" target="_blank">
+        <button class="whatsapp-btn"><i class="fa-brands fa-whatsapp"></i> Apply on WhatsApp</button>
+      </a>
+  </nav>
+  <div class="hamburger" onclick="toggleMenu()">
+    <i class="fa fa-bars"></i>
+  </div>
 </header>
 
 
@@ -153,6 +156,10 @@
 
     <p class="copyright">© 2024 QuickLoan</p>
 </footer>
-
+<script>
+function toggleMenu() {
+  document.getElementById("nav-links").classList.toggle("show");
+}
+</script>
 </body>
 </html>
