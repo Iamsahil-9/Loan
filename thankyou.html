@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Processing...</title>
+
+<style>
+body {
+    margin:0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#f5f7f9,#e8f5e9);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+/* CARD */
+.container {
+    background:#fff;
+    padding:40px 25px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 15px 40px rgba(0,0,0,0.08);
+    max-width:350px;
+    width:90%;
+}
+
+/* ICON */
+.icon {
+    font-size:40px;
+    color:#00c853;
+    margin-bottom:10px;
+}
+
+/* TEXT */
+h2 {
+    margin:10px 0;
+    font-size:22px;
+}
+
+p {
+    color:#555;
+    font-size:14px;
+}
+
+/* LOADER */
+.loader {
+    margin:20px auto;
+    width:50px;
+    height:50px;
+    border:5px solid #eee;
+    border-top:5px solid #00c853;
+    border-radius:50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* PROGRESS TEXT */
+.progress {
+    font-size:13px;
+    color:#888;
+    margin-top:10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="icon">🚀</div>
+
+  <h2>Processing Your Request</h2>
+
+  <p>Please wait while we check your eligibility...</p>
+
+  <div class="loader"></div>
+
+  <p class="progress">Redirecting you securely...</p>
+
+</div>
+
+<script>
+setTimeout(()=>{
+  window.location.href = "https://upstox.com/open-account/?f=6ZA67G";
+},2000);
+</script>
+
+</body>
+</html>
