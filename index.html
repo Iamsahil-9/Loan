@@ -1,165 +1,242 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>QuickLoan</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QuickLoan</title>
 
-<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">QuickLoan</div>
+      <nav id="nav-links">
+        <a href="#">How it works</a>
+        <a href="#">Rates & Fees</a>
+        <a href="#">FAQ</a>
+        <a href="#">Contact Us</a>
+      </nav>
+      <div class="hamburger" onclick="toggleMenu()">
+        <i class="fa fa-bars"></i>
+      </div>
+    </header>
 
-</head>
-<body>
+    <section class="hero">
+      <div class="hero-left">
+        <h1>Get Instant Personal Loan in Minutes</h1>
 
+        <p>
+          💰 Loan up to <b>₹5,00,000</b><br />
+          ⚡ Approval in 10 minutes<br />
+          📄 Minimal Documents Required
+        </p>
 
-<header class="header">
-  <div class="logo">QuickLoan</div>
-  <nav id="nav-links">
-      <a href="#">How it works</a>
-      <a href="#">Rates & Fees</a>
-      <a href="#">FAQ</a>
-      <a href="#">Contact Us</a>
-      <a href="https://wa.me/919167395780?text=Hi%20I%20want%20to%20apply%20for%20a%20loan" target="_blank">
-        <button class="whatsapp-btn"><i class="fa-brands fa-whatsapp"></i> Apply on WhatsApp</button>
-      </a>
-  </nav>
-  <div class="hamburger" onclick="toggleMenu()">
-    <i class="fa fa-bars"></i>
-  </div>
-</header>
+        <p style="color: red; font-size: 14px; margin-top: 10px">
+          🔥 120+ people applied today
+        </p>
 
+        <form class="form" onsubmit="sendToWhatsApp(event)">
+          <h3 class="form-title">Check Your Loan Eligibility</h3>
 
-<section class="hero">
-  <div class="hero-left">
-    <h1>Secure Your <span>Financial Freedom</span></h1>
-    <p>Instant Personal Loans <br><b>Up to ₹5,00,000</b></p>
+          <div class="input-group">
+            <input type="text" id="name" placeholder=" " required />
+            <label>Full Name</label>
+          </div>
 
-    <form class="form" onsubmit="sendToWhatsApp(event)">
-      <input type="text" id="name" placeholder="Full Name" required>
-      <input type="tel" id="mobile" placeholder="Mobile Number" maxlength="10" pattern="\d{10}" required>
-      <input type="email" id="email" placeholder="Email Address" required>
-      <button type="submit" class="cta-btn"><i class="fa-brands fa-whatsapp"></i> Apply Now</button>
-    </form>
+          <div class="input-group">
+            <input
+              type="tel"
+              id="mobile"
+              placeholder=" "
+              maxlength="10"
+              pattern="\d{10}"
+              required
+            />
+            <label>Mobile Number</label>
+          </div>
 
-    <small>By clicking ‘Apply Now’, you agree to our Terms & Privacy Policy.</small>
-  </div>
+          <div class="input-group">
+            <input type="email" id="email" placeholder=" " required />
+            <label>Email Address</label>
+          </div>
 
-  <div class="hero-right">
-    <img src="assest/heroright.jpg" alt="Loan Application Illustration">
-  </div>
-</section>
+          <div class="input-group">
+            <input type="text" id="loan" placeholder=" " required />
+            <label>Required Loan Amount</label>
+          </div>
 
-<section class="features">
-    <div><i class="fa-solid fa-bolt"></i> Fast, Real-Time Loan Requests</div>
-    <div><i class="fa-solid fa-building-columns"></i> Funds Directly Deposited</div>
-    <div><i class="fa-solid fa-circle-check"></i> All Credit Types Accepted</div>
-</section>
+          <button type="submit" class="cta-btn">🚀 Check Eligibility</button>
 
+          <p class="form-note">🔒 100% Secure | No Spam | Instant Approval</p>
+        </form>
 
-<section class="steps">
-    <h2>HOW DOES <span>PERSONAL LOAN</span> WORK?</h2>
+        <p style="margin-top: 10px; font-size: 13px; color: #444">
+          ⭐ Rated 4.8/5 by 2,000+ users
+        </p>
 
-    <div class="step-box">
+        <p style="font-size: 13px; color: #444">
+          🏦 Trusted by 25+ lending partners
+        </p>
+        <p style="font-size: 13px; margin-top: 10px">
+          ✔ 100% Safe & Secure <br />
+          ✔ RBI Registered Lending Partners <br />
+          ✔ No Hidden Charges
+        </p>
+
+        <small
+          >By clicking ‘Apply Now’, you agree to our Terms & Privacy
+          Policy.</small
+        >
+      </div>
+
+      <div class="hero-right">
+        <img src="assest/heroright.jpg" alt="Loan Application Illustration" />
+      </div>
+    </section>
+
+    <section class="features">
+      <div><i class="fa-solid fa-bolt"></i> Instant Loan Approval</div>
+      <div>
+        <i class="fa-solid fa-building-columns"></i> Direct Bank Transfer
+      </div>
+      <div>
+        <i class="fa-solid fa-circle-check"></i> All Credit Scores Accepted
+      </div>
+    </section>
+
+    <section class="steps">
+      <h2>HOW DOES <span>PERSONAL LOAN</span> WORK?</h2>
+
+      <div class="step-box">
         <div class="card">
-            <i class="fa-solid fa-file"></i>
-            <h3>01</h3>
-            <p>Submit your information</p>
+          <i class="fa-solid fa-file"></i>
+          <h3>01</h3>
+          <p>Submit your information</p>
         </div>
 
         <div class="card">
-            <i class="fa-solid fa-gauge"></i>
-            <h3>02</h3>
-            <p>Fast approval</p>
+          <i class="fa-solid fa-gauge"></i>
+          <h3>02</h3>
+          <p>Fast approval</p>
         </div>
 
         <div class="card">
-            <i class="fa-solid fa-check"></i>
-            <h3>03</h3>
-            <p>Check your account</p>
+          <i class="fa-solid fa-check"></i>
+          <h3>03</h3>
+          <p>Check your account</p>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
+    <section class="why">
+      <h2>WHY CHOOSE US?</h2>
 
-<section class="why">
-    <h2>WHY CHOOSE US?</h2>
-
-    <div class="why-grid">
+      <div class="why-grid">
         <div><i class="fa-solid fa-user-check"></i> Easy Approval</div>
         <div><i class="fa-solid fa-sack-dollar"></i> Fast Cash</div>
         <div><i class="fa-solid fa-clock"></i> Save Time</div>
         <div><i class="fa-solid fa-shield"></i> No Hidden Charges</div>
-    </div>
+      </div>
 
-    <button class="main-btn">Get Started on WhatsApp</button>
-</section>
+      <button class="main-btn">Get Started on WhatsApp</button>
+    </section>
 
-
-<section class="loan">
-    <div class="loan-left">
+    <section class="loan">
+      <div class="loan-left">
         <h2>A LOAN WITH <span>ANY CREDIT SCORE</span></h2>
         <p>Flexible loans even with low credit score.</p>
 
         <div class="loan-features">
-            <div>Low Interest</div>
-            <div>Minimal Docs</div>
-            <div>Flexible Tenure</div>
-            <div>Quick Disbursal</div>
+          <div>Low Interest</div>
+          <div>Minimal Docs</div>
+          <div>Flexible Tenure</div>
+          <div>Quick Disbursal</div>
         </div>
-    </div>
+      </div>
 
-    <div class="loan-right">
-        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
-    </div>
-</section>
+      <div class="loan-right">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" />
+      </div>
+    </section>
 
+    <section class="faq">
+      <h2>FAQ</h2>
 
-<section class="faq">
-    <h2>FAQ</h2>
-
-    <details>
+      <details>
         <summary>What is a personal loan?</summary>
         <p>A loan used for personal expenses.</p>
-    </details>
+      </details>
 
-    <details>
+      <details>
         <summary>How much can I borrow?</summary>
         <p>Up to ₹5,00,000.</p>
-    </details>
+      </details>
 
-    <details>
+      <details>
         <summary>Interest rate?</summary>
         <p>Depends on lender.</p>
-    </details>
-</section>
+      </details>
+    </section>
 
-
-<footer class="footer">
-    <div class="footer-content">
-        <div>
-            <h3>QuickLoan</h3>
-            <p>Quick loans. Easy process.</p>
+    <footer class="footer">
+      <div class="footer-content">
+        <!-- BRAND -->
+        <div class="footer-box">
+          <h3>QuickLoan</h3>
+          <p>
+            Get instant personal loans with a fast, secure and hassle-free
+            process.
+          </p>
+          <p>💰 Loan up to ₹5,00,000</p>
+          <p>⚡ Instant Approval</p>
         </div>
 
-        <div>
-            <h4>Links</h4>
-            <p>How it works</p>
-            <p>Rates & Fees</p>
+        <!-- QUICK LINKS -->
+        <div class="footer-box">
+          <h4>Quick Links</h4>
+          <a href="#">How it works</a>
+          <a href="#">Rates & Fees</a>
+          <a href="#">FAQ</a>
+          <a href="#">Contact Us</a>
         </div>
 
-        <div>
-            <h4>Disclaimer</h4>
-            <p>This website is not a lender.</p>
+        <!-- SUPPORT -->
+        <div class="footer-box">
+          <h4>Support</h4>
+          <p>📧 support@quickloan.com</p>
+          <p>📞 +91 9167395780</p>
+          <p>⏰ Mon - Sat (10AM - 7PM)</p>
         </div>
-    </div>
 
-    <p class="copyright">© 2024 QuickLoan</p>
-</footer>
-<script>
-function toggleMenu() {
-  document.getElementById("nav-links").classList.toggle("show");
-}
-</script>
-</body>
+        <!-- LEGAL -->
+        <div class="footer-box">
+          <h4>Legal</h4>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms & Conditions</a>
+          <p>Disclaimer</p>
+        </div>
+      </div>
+
+      <!-- TRUST LINE -->
+      <div class="footer-bottom">
+        <p>
+          ⚠️ This platform is not a lender. We connect users with RBI-registered
+          lending partners.
+        </p>
+
+        <p class="copyright">© 2026 QuickLoan. All Rights Reserved.</p>
+      </div>
+    </footer>
+    <script>
+      function toggleMenu() {
+        document.getElementById("nav-links").classList.toggle("show");
+      }
+    </script>
+    <script src="script.js"></script>
+  </body>
 </html>
