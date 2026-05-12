@@ -3,240 +3,935 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>QuickLoan</title>
-
-    <link rel="stylesheet" href="style.css" />
-
+    <title>QuickLoan — Instant Personal Loans up to ₹5,00,000</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header class="header">
-      <div class="logo">QuickLoan</div>
-      <nav id="nav-links">
-        <a href="#">How it works</a>
-        <a href="#">Rates & Fees</a>
-        <a href="#">FAQ</a>
-        <a href="#">Contact Us</a>
+    <!-- TRUST BAR -->
+    <div class="trust-bar">
+      <span
+        ><i class="fa-solid fa-shield-halved"></i> Trusted Lending
+        Partners</span
+      >
+      <span><i class="fa-solid fa-lock"></i> 256-bit SSL Secure</span>
+      <span
+        ><i class="fa-solid fa-users"></i> Thousands of Users Across India</span
+      >
+      <span
+        ><i class="fa-solid fa-star" style="color: #f5a623"></i> Rated 4.8 /
+        5</span
+      >
+    </div>
+
+    <!-- HEADER -->
+    <header>
+      <div class="logo">
+        <div class="logo-icon"><i class="fa-solid fa-bolt"></i></div>
+        QuickLoan
+      </div>
+      <nav id="main-nav">
+        <a href="#how">How It Works</a>
+        <a href="#calculator">Calculator</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+        <a href="https://upstox.com/open-account/?f=6ZA67G" class="nav-cta"
+          >Apply Now →</a
+        >
       </nav>
-      <div class="hamburger" onclick="toggleMenu()">
-        <i class="fa fa-bars"></i>
+      <div class="hamburger" onclick="toggleMobileNav()">
+        <i class="fa-solid fa-bars"></i>
       </div>
     </header>
+    <div class="mobile-nav" id="mobile-nav">
+      <a href="#how" onclick="toggleMobileNav()">How It Works</a>
+      <a href="#calculator" onclick="toggleMobileNav()">Calculator</a>
+      <a href="#faq" onclick="toggleMobileNav()">FAQ</a>
+      <a href="#apply" onclick="toggleMobileNav()">Apply Now</a>
+    </div>
 
-    <section class="hero">
+    <!-- HERO -->
+    <section class="hero" id="apply">
       <div class="hero-left">
-        <h1>Get Instant Personal Loan in Minutes</h1>
-
-        <p>
-          💰 Loan up to <b>₹5,00,000</b><br />
-          ⚡ Approval in 10 minutes<br />
-          📄 Minimal Documents Required
+        <div class="hero-badge">
+          <span class="pulse"></span> Fast Eligibility Check — Apply in 2
+          minutes
+        </div>
+        <h1>Get Your Personal Loan<br /><em>Without the Hassle</em></h1>
+        <p class="hero-sub">
+          Skip the bank queues. Get up to ₹5,00,000 directly in your account —
+          fully paperless, fully secure.
+        </p>
+        <p class="mini-note">
+          QuickLoan is not a direct lender. Loan approval, interest rates and
+          disbursal are subject to partner lender eligibility and verification.
         </p>
 
-        <p style="color: red; font-size: 14px; margin-top: 10px">
-          🔥 120+ people applied today
-        </p>
-
-        <form class="form" onsubmit="sendToWhatsApp(event)">
-          <h3 class="form-title">Check Your Loan Eligibility</h3>
-
-          <div class="input-group">
-            <input type="text" id="name" placeholder=" " required />
-            <label>Full Name</label>
+        <div class="hero-stats">
+          <div class="stat-pill">
+            <div class="stat-icon">💰</div>
+            <div>
+              <div class="stat-val">₹5L</div>
+              <div class="stat-lbl">Max Loan</div>
+            </div>
           </div>
-
-          <div class="input-group">
-            <input
-              type="tel"
-              id="mobile"
-              placeholder=" "
-              maxlength="10"
-              pattern="\d{10}"
-              required
-            />
-            <label>Mobile Number</label>
+          <div class="stat-pill">
+            <div class="stat-icon">⚡</div>
+            <div>
+              <div class="stat-val">Quick</div>
+              <div class="stat-lbl">Processing</div>
+            </div>
           </div>
-
-          <div class="input-group">
-            <input type="email" id="email" placeholder=" " required />
-            <label>Email Address</label>
+          <div class="stat-pill">
+            <div class="stat-icon">📋</div>
+            <div>
+              <div class="stat-val">Minimal</div>
+              <div class="stat-lbl">Documents</div>
+            </div>
           </div>
-
-          <div class="input-group">
-            <input type="text" id="loan" placeholder=" " required />
-            <label>Required Loan Amount</label>
-          </div>
-
-          <button type="submit" class="cta-btn">🚀 Check Eligibility</button>
-
-          <p class="form-note">🔒 100% Secure | No Spam | Instant Approval</p>
-        </form>
-
-        <p style="margin-top: 10px; font-size: 13px; color: #444">
-          ⭐ Rated 4.8/5 by 2,000+ users
-        </p>
-
-        <p style="font-size: 13px; color: #444">
-          🏦 Trusted by 25+ lending partners
-        </p>
-        <p style="font-size: 13px; margin-top: 10px">
-          ✔ 100% Safe & Secure <br />
-          ✔ RBI Registered Lending Partners <br />
-          ✔ No Hidden Charges
-        </p>
-
-        <small
-          >By clicking ‘Apply Now’, you agree to our Terms & Privacy
-          Policy.</small
-        >
-      </div>
-
-      <div class="hero-right">
-        <img src="assest/heroright.jpg" alt="Loan Application Illustration" />
-      </div>
-    </section>
-
-    <section class="features">
-      <div><i class="fa-solid fa-bolt"></i> Instant Loan Approval</div>
-      <div>
-        <i class="fa-solid fa-building-columns"></i> Direct Bank Transfer
-      </div>
-      <div>
-        <i class="fa-solid fa-circle-check"></i> All Credit Scores Accepted
-      </div>
-    </section>
-
-    <section class="steps">
-      <h2>HOW DOES <span>PERSONAL LOAN</span> WORK?</h2>
-
-      <div class="step-box">
-        <div class="card">
-          <i class="fa-solid fa-file"></i>
-          <h3>01</h3>
-          <p>Submit your information</p>
         </div>
 
-        <div class="card">
-          <i class="fa-solid fa-gauge"></i>
-          <h3>02</h3>
-          <p>Fast approval</p>
-        </div>
-
-        <div class="card">
-          <i class="fa-solid fa-check"></i>
-          <h3>03</h3>
-          <p>Check your account</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="why">
-      <h2>WHY CHOOSE US?</h2>
-
-      <div class="why-grid">
-        <div><i class="fa-solid fa-user-check"></i> Easy Approval</div>
-        <div><i class="fa-solid fa-sack-dollar"></i> Fast Cash</div>
-        <div><i class="fa-solid fa-clock"></i> Save Time</div>
-        <div><i class="fa-solid fa-shield"></i> No Hidden Charges</div>
-      </div>
-
-      <button class="main-btn">Get Started on WhatsApp</button>
-    </section>
-
-    <section class="loan">
-      <div class="loan-left">
-        <h2>A LOAN WITH <span>ANY CREDIT SCORE</span></h2>
-        <p>Flexible loans even with low credit score.</p>
-
-        <div class="loan-features">
-          <div>Low Interest</div>
-          <div>Minimal Docs</div>
-          <div>Flexible Tenure</div>
-          <div>Quick Disbursal</div>
+        <div class="social-proof">
+          <div class="avatars">
+            <img src="https://i.pravatar.cc/40?img=11" alt="" />
+            <img src="https://i.pravatar.cc/40?img=22" alt="" />
+            <img src="https://i.pravatar.cc/40?img=33" alt="" />
+            <img src="https://i.pravatar.cc/40?img=44" alt="" />
+          </div>
+          <div>
+            <div class="stars">★★★★★</div>
+            <div style="font-size: 12px">
+              Trusted by <strong>users</strong>across India
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="loan-right">
-        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" />
+      <!-- APPLICATION FORM -->
+      <div class="form-card" id="loan-form">
+        <div class="form-header">
+          <h2>Check Your Eligibility — Free</h2>
+          <p>Takes less than 2 minutes. No credit score impact.</p>
+          <div class="form-badge">🔒 Bank-Grade Secure</div>
+        </div>
+        <div class="form-body">
+          <div class="form-steps">
+            <div class="form-step active">Details</div>
+            <div class="form-step active">Loan</div>
+          </div>
+
+          <div class="progress-bar-wrap">
+            <div class="progress-bar" id="form-progress"></div>
+          </div>
+
+          <!-- Step 1: Personal -->
+          <div id="step1">
+            <div class="field">
+              <input
+                type="text"
+                id="f-name"
+                placeholder=" "
+                autocomplete="name"
+              />
+              <label>Full Name</label>
+              <span class="icon"><i class="fa-solid fa-user"></i></span>
+              <div class="field-error">Please enter your full name</div>
+            </div>
+            <div class="field">
+              <input
+                type="email"
+                id="f-email"
+                placeholder=" "
+                autocomplete="email"
+              />
+              <label>Email Address</label>
+              <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+              <div class="field-error">Please enter a valid email</div>
+            </div>
+
+            <div class="field">
+              <input
+                type="tel"
+                id="f-phone"
+                placeholder=" "
+                maxlength="10"
+                required
+              />
+              <label>Mobile Number</label>
+              <span class="icon">
+                <i class="fa-solid fa-phone"></i>
+              </span>
+            </div>
+            <div class="field">
+              <select id="f-employ" class="">
+                <option value="" disabled selected></option>
+                <option>Salaried</option>
+                <option>Self-Employed</option>
+                <option>Business Owner</option>
+                <option>Student</option>
+              </select>
+              <label>Employment Type</label>
+              <span class="icon"><i class="fa-solid fa-briefcase"></i></span>
+            </div>
+            <button class="submit-btn" onclick="submitForm()" id="final-submit">
+              Check Free Eligibility
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+
+          <div class="form-trust">
+            <span
+              ><i class="fa-solid fa-lock" style="color: var(--green)"></i>
+              256-bit Encrypted</span
+            >
+            <span
+              ><i class="fa-solid fa-shield" style="color: var(--green)"></i>
+              Secure Application Process</span
+            >
+            <span
+              ><i class="fa-solid fa-eye-slash" style="color: var(--green)"></i>
+              No Spam</span
+            >
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="faq">
-      <h2>FAQ</h2>
+    <!-- FEATURES STRIP -->
+    <div class="features-strip">
+      <div class="feat-item">
+        <div class="feat-icon"><i class="fa-solid fa-bolt"></i></div>
+        <div class="feat-txt">
+          <strong>Fast Eligibility Check</strong
+          ><small>Quick eligibility review</small>
+        </div>
+      </div>
+      <div class="feat-item">
+        <div class="feat-icon">
+          <i class="fa-solid fa-building-columns"></i>
+        </div>
+        <div class="feat-txt">
+          <strong>Direct Bank Transfer</strong
+          ><small>Funds in your account</small>
+        </div>
+      </div>
+      <div class="feat-item">
+        <div class="feat-icon">
+          <i class="fa-solid fa-file-circle-check"></i>
+        </div>
+        <div class="feat-txt">
+          <strong>Minimal Documents</strong><small>PAN + Aadhaar only</small>
+        </div>
+      </div>
+      <div class="feat-item">
+        <div class="feat-icon"><i class="fa-solid fa-chart-line"></i></div>
+        <div class="feat-txt">
+          <strong>Multiple Lending Options</strong
+          ><small>All profiles considered</small>
+        </div>
+      </div>
+      <div class="feat-item">
+        <div class="feat-icon"><i class="fa-solid fa-shield-halved"></i></div>
+        <div class="feat-txt">
+          <strong>No Hidden Charges</strong><small>100% transparent</small>
+        </div>
+      </div>
+    </div>
 
-      <details>
-        <summary>What is a personal loan?</summary>
-        <p>A loan used for personal expenses.</p>
-      </details>
-
-      <details>
-        <summary>How much can I borrow?</summary>
-        <p>Up to ₹5,00,000.</p>
-      </details>
-
-      <details>
-        <summary>Interest rate?</summary>
-        <p>Depends on lender.</p>
-      </details>
-    </section>
-
-    <footer class="footer">
-      <div class="footer-content">
-        <!-- BRAND -->
-        <div class="footer-box">
-          <h3>QuickLoan</h3>
+    <!-- HOW IT WORKS -->
+    <section class="how reveal" id="how">
+      <div style="text-align: center; margin-bottom: 8px">
+        <div class="section-label">Process</div>
+      </div>
+      <div style="text-align: center">
+        <div class="section-title">How <em>QuickLoan</em> Works</div>
+        <div class="section-sub">
+          Three simple steps — from application to money in your bank.
+        </div>
+      </div>
+      <div class="how-grid">
+        <div class="how-card">
+          <div class="how-num">01</div>
+          <div class="how-icon"><i class="fa-solid fa-file-pen"></i></div>
+          <h3>Fill Your Details</h3>
           <p>
-            Get instant personal loans with a fast, secure and hassle-free
-            process.
+            Share basic personal and financial information. Takes less than 2
+            minutes, no paperwork needed.
           </p>
-          <p>💰 Loan up to ₹5,00,000</p>
-          <p>⚡ Instant Approval</p>
+          <div class="how-arrow"><i class="fa-solid fa-arrow-right"></i></div>
         </div>
+        <div class="how-card">
+          <div class="how-num">02</div>
+          <div class="how-icon"><i class="fa-solid fa-gauge-high"></i></div>
+          <h3>Quick Eligibility Review</h3>
+          <p>
+            Our system connects with 25+ RBI-registered lenders and finds you
+            the best match in seconds.
+          </p>
+          <div class="how-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        </div>
+        <div class="how-card">
+          <div class="how-num">03</div>
+          <div class="how-icon">
+            <i class="fa-solid fa-money-bill-transfer"></i>
+          </div>
+          <h3>Funds may be disbursed after lender approval</h3>
+          <p>
+            Once approved, funds are disbursed directly to your bank account —
+            same day in most cases.
+          </p>
+        </div>
+      </div>
+    </section>
 
-        <!-- QUICK LINKS -->
-        <div class="footer-box">
+    <!-- CALCULATOR -->
+    <section class="calc-section reveal" id="calculator">
+      <div class="calc-inner">
+        <div>
+          <div class="section-label">EMI Calculator</div>
+          <div class="section-title">Plan Your <em>Repayment</em></div>
+          <div class="section-sub" style="margin-bottom: 36px">
+            Adjust the sliders to estimate your monthly EMI.
+          </div>
+
+          <div class="range-group">
+            <div class="range-label">
+              <span>Loan Amount</span
+              ><span class="range-val" id="amt-display">₹2,00,000</span>
+            </div>
+            <input
+              type="range"
+              id="amt-range"
+              min="10000"
+              max="500000"
+              step="5000"
+              value="200000"
+              oninput="calcEMI()"
+            />
+          </div>
+          <div class="range-group">
+            <div class="range-label">
+              <span>Interest Rate</span
+              ><span class="range-val" id="rate-display">12%</span>
+            </div>
+            <input
+              type="range"
+              id="rate-range"
+              min="10"
+              max="36"
+              step="1"
+              value="12"
+              oninput="calcEMI()"
+            />
+          </div>
+          <div class="range-group">
+            <div class="range-label">
+              <span>Tenure</span
+              ><span class="range-val" id="tenure-display">24 months</span>
+            </div>
+            <input
+              type="range"
+              id="tenure-range"
+              min="3"
+              max="60"
+              step="3"
+              value="24"
+              oninput="calcEMI()"
+            />
+          </div>
+        </div>
+        <div class="calc-result">
+          <h3>Monthly EMI</h3>
+          <div class="emi" id="emi-display">₹9,415</div>
+          <hr class="calc-divider" />
+          <div class="calc-row">
+            <span>Principal Amount</span
+            ><span id="cr-principal">₹2,00,000</span>
+          </div>
+          <div class="calc-row">
+            <span>Total Interest</span><span id="cr-interest">₹25,960</span>
+          </div>
+          <div class="calc-row">
+            <span>Total Repayment</span><span id="cr-total">₹2,25,960</span>
+          </div>
+          <div class="calc-row">
+            <span>Loan Tenure</span><span id="cr-tenure">24 months</span>
+          </div>
+          <p class="calc-note">
+            * Indicative calculation. Final rate decided by lending partner
+            based on your profile.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section class="why-section reveal">
+      <div style="text-align: center; margin-bottom: 8px">
+        <div class="section-label">Benefits</div>
+      </div>
+      <div style="text-align: center">
+        <div class="section-title">Why Thousands Choose <em>Us</em></div>
+      </div>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon"><i class="fa-solid fa-user-check"></i></div>
+          <h3>Flexible Lending Options</h3>
+          <p>
+            Even with a low CIBIL score, our partners have solutions tailored
+            for you.
+          </p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon"><i class="fa-solid fa-clock"></i></div>
+          <h3>Quick Processing</h3>
+          <p>
+            No waiting days. Our automated system gives decisions in minutes.
+          </p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon"><i class="fa-solid fa-percent"></i></div>
+          <h3>Competitive Rates</h3>
+          <p>
+            We compare 25+ lenders and present you the lowest interest rate
+            available.
+          </p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon"><i class="fa-solid fa-eye-slash"></i></div>
+          <h3>Zero Hidden Fees</h3>
+          <p>
+            Complete transparency. No processing surprises, no hidden charges
+            ever.
+          </p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon"><i class="fa-solid fa-mobile-screen"></i></div>
+          <h3>100% Digital</h3>
+          <p>
+            Apply from your phone. No branch visit, no fax, no physical
+            paperwork.
+          </p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon"><i class="fa-solid fa-headset"></i></div>
+          <h3>Dedicated Support</h3>
+          <p>
+            Our loan advisors are available Mon–Sat 10AM–7PM for any assistance.
+          </p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon"><i class="fa-solid fa-rotate"></i></div>
+          <h3>Flexible Tenure</h3>
+          <p>
+            Choose repayment from 3 to 60 months — whatever fits your budget.
+          </p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <h3>RBI Registered</h3>
+          <p>
+            All our lending partners are fully licensed and regulated by the
+            RBI.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials reveal">
+      <div style="text-align: center; margin-bottom: 8px">
+        <div class="section-label">Reviews</div>
+      </div>
+      <div style="text-align: center">
+        <div class="section-title">What Our <em>Customers Say</em></div>
+      </div>
+      <div class="testi-grid">
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">
+            "I needed money urgently for a medical emergency. QuickLoan approved
+            ₹1,50,000 in under 15 minutes. Absolutely incredible service —
+            lifesaver!"
+          </p>
+          <div class="testi-author">
+            <div class="testi-avatar">R</div>
+            <div>
+              <div class="testi-name">Rohit Singh</div>
+              <div class="testi-role">Software Engineer, Mumbai</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">
+            "I was skeptical about online loans, but the process was completely
+            transparent and hassle-free. Got ₹3,00,000 for my home renovation
+            within the day."
+          </p>
+          <div class="testi-author">
+            <div class="testi-avatar">P</div>
+            <div>
+              <div class="testi-name">Priya Menon</div>
+              <div class="testi-role">Teacher, Bengaluru</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★☆</div>
+          <p class="testi-text">
+            "The EMI calculator helped me plan perfectly. Low interest rate
+            compared to other platforms. Will definitely recommend to friends
+            and family."
+          </p>
+          <div class="testi-author">
+            <div class="testi-avatar">A</div>
+            <div>
+              <div class="testi-name">Ajay Verma</div>
+              <div class="testi-role">Business Owner, Delhi</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PARTNERS -->
+    <div class="partners reveal">
+      <h3>Our Lending Partners</h3>
+      <div class="partner-logos">
+        <div class="partner-logo">
+          <i class="fa-solid fa-building-columns"></i> HDFC Bank
+        </div>
+        <div class="partner-logo">
+          <i class="fa-solid fa-building-columns"></i> ICICI Bank
+        </div>
+        <div class="partner-logo">
+          <i class="fa-solid fa-building-columns"></i> Bajaj Finserv
+        </div>
+        <div class="partner-logo">
+          <i class="fa-solid fa-building-columns"></i> MoneyTap
+        </div>
+        <div class="partner-logo">
+          <i class="fa-solid fa-building-columns"></i> KreditBee
+        </div>
+        <div class="partner-logo">
+          <i class="fa-solid fa-building-columns"></i> CASHe
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <section class="faq-section reveal" id="faq">
+      <div style="text-align: center; margin-bottom: 8px">
+        <div class="section-label">FAQ</div>
+      </div>
+      <div style="text-align: center; margin-bottom: 36px">
+        <div class="section-title">Frequently Asked <em>Questions</em></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">
+          What is the maximum loan amount I can get?
+          <i class="fa-solid fa-plus"></i>
+        </div>
+        <div class="faq-a">
+          You can borrow up to ₹5,00,000. The final approved amount depends on
+          your income, credit profile, and the partner lender's policy.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">
+          What documents do I need to apply? <i class="fa-solid fa-plus"></i>
+        </div>
+        <div class="faq-a">
+          Only your PAN card and Aadhaar card are required for most loans. Some
+          lenders may ask for 3 months' bank statements for higher amounts.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">
+          How long does approval take? <i class="fa-solid fa-plus"></i>
+        </div>
+        <div class="faq-a">
+          Our system checks your eligibility instantly. Once matched with a
+          lender, approval can happen within 10 minutes during business hours.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">
+          What is the interest rate? <i class="fa-solid fa-plus"></i>
+        </div>
+        <div class="faq-a">
+          Rates vary by lender and your credit profile — typically between 10%
+          and 36% p.a. We always show you the best available rate before you
+          commit.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">
+          Will applying affect my CIBIL score? <i class="fa-solid fa-plus"></i>
+        </div>
+        <div class="faq-a">
+          Checking eligibility on QuickLoan does NOT affect your credit score. A
+          hard inquiry only happens if you formally accept a loan offer.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">
+          Is QuickLoan a lender? <i class="fa-solid fa-plus"></i>
+        </div>
+        <div class="faq-a">
+          No. QuickLoan is a loan marketplace. We connect you with
+          RBI-registered lending partners who provide the actual loan. We do not
+          lend money directly.
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <div class="cta-banner reveal">
+      <h2>Ready to Get Your Loan?</h2>
+      <p>Join 1,00,000+ satisfied borrowers. Fast, secure and fully digital.</p>
+      <a
+        href="https://wa.me/919920082731?text=Hello%20QuickLoan%20Team%2C%20I%20am%20interested%20in%20personal%20loan%20offers.%20Please%20contact%20me%20with%20more%20details."
+        target="_blank"
+        class="btn"
+      >
+        <i class="fa-brands fa-whatsapp"></i>
+        Apply on WhatsApp Now
+      </a>
+    </div>
+
+    <!-- FOOTER -->
+    <footer id="contact">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo" style="margin-bottom: 14px">
+            <div class="logo-icon"><i class="fa-solid fa-bolt"></i></div>
+            QuickLoan
+          </div>
+          <p>
+            India's fastest growing loan marketplace. We connect borrowers with
+            RBI-registered lenders for quick, transparent, and hassle-free
+            personal loans.
+          </p>
+          <div style="margin-top: 16px; display: flex; gap: 12px">
+            <a
+              href="#"
+              style="
+                width: 34px;
+                height: 34px;
+                border-radius: 8px;
+                background: #1a2e1d;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #7a9a82;
+                font-size: 14px;
+                text-decoration: none;
+              "
+              ><i class="fa-brands fa-facebook-f"></i
+            ></a>
+            <a
+              href="#"
+              style="
+                width: 34px;
+                height: 34px;
+                border-radius: 8px;
+                background: #1a2e1d;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #7a9a82;
+                font-size: 14px;
+                text-decoration: none;
+              "
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+            <a
+              href="#"
+              style="
+                width: 34px;
+                height: 34px;
+                border-radius: 8px;
+                background: #1a2e1d;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #7a9a82;
+                font-size: 14px;
+                text-decoration: none;
+              "
+              ><i class="fa-brands fa-twitter"></i
+            ></a>
+          </div>
+        </div>
+        <div class="footer-col">
           <h4>Quick Links</h4>
-          <a href="#">How it works</a>
-          <a href="#">Rates & Fees</a>
-          <a href="#">FAQ</a>
-          <a href="#">Contact Us</a>
+          <a href="#how">How It Works</a>
+          <a href="#calculator">EMI Calculator</a>
+          <a href="#faq">FAQ</a>
+          <a href="https://upstox.com/open-account/?f=6ZA67G">Apply Now</a>
         </div>
-
-        <!-- SUPPORT -->
-        <div class="footer-box">
+        <div class="footer-col">
           <h4>Support</h4>
-          <p>📧 support@quickloan.com</p>
-          <p>📞 +91 9167395780</p>
-          <p>⏰ Mon - Sat (10AM - 7PM)</p>
+          <p>📧 support@quickloan.in</p>
+          <p>📞 +91 9920082731</p>
+          <p>⏰ Mon–Sat 10AM–7PM</p>
         </div>
-
-        <!-- LEGAL -->
-        <div class="footer-box">
+        <div class="footer-col">
           <h4>Legal</h4>
           <a href="privacy.html">Privacy Policy</a>
           <a href="terms.html">Terms & Conditions</a>
-          <p>Disclaimer</p>
+          <a href="#">Disclaimer</a>
+          <a href="#">Grievance Policy</a>
         </div>
       </div>
-
-      <!-- TRUST LINE -->
+      <div class="footer-disclaimer">
+        ⚠️ <strong>Disclaimer:</strong> QuickLoan is a loan marketplace and does
+        not directly lend money. All loan approvals are at the sole discretion
+        of the lending partner. Interest rates, tenure, and eligibility criteria
+        vary by lender. Borrowers are advised to read all terms carefully before
+        accepting any loan offer. Loans are subject to RBI guidelines.
+      </div>
       <div class="footer-bottom">
-        <p>
-          ⚠️ This platform is not a lender. We connect users with RBI-registered
-          lending partners.
-        </p>
-
-        <p class="copyright">© 2026 QuickLoan. All Rights Reserved.</p>
+        <p>© 2026 QuickLoan. All Rights Reserved.</p>
+        <p>Made with ❤️ in India | CIN: U67190MH2024PTC000000</p>
       </div>
     </footer>
+
+    <!-- SUCCESS MODAL -->
+    <div class="modal-overlay" id="success-modal">
+      <div class="modal-box">
+        <div class="modal-icon"><i class="fa-solid fa-check"></i></div>
+        <h2>Application Submitted!</h2>
+        <p>
+          Your loan application has been received. A loan advisor will contact
+          you on your verified mobile number within 10 minutes.
+        </p>
+        <div class="modal-ref" id="modal-ref-num">REF: QL000000</div>
+        <p style="font-size: 12px; color: #aaa; margin-bottom: 20px">
+          Save this reference number for tracking your application.
+        </p>
+        <button
+          class="modal-close"
+          onclick="
+            document.getElementById('success-modal').classList.remove('open')
+          "
+        >
+          Done
+        </button>
+      </div>
+    </div>
+
+    <!-- STICKY MOBILE CTA -->
+    <div
+      class="sticky-mobile-cta"
+      onclick="
+        document.getElementById('apply').scrollIntoView({ behavior: 'smooth' })
+      "
+    >
+      🚀 Apply Now — Free Eligibility Check
+    </div>
+
     <script>
-      function toggleMenu() {
-        document.getElementById("nav-links").classList.toggle("show");
+      /* ── NAV ── */
+      function toggleMobileNav() {
+        document.getElementById("mobile-nav").classList.toggle("open");
       }
+
+      /* ── REVEAL ON SCROLL ── */
+      const reveals = document.querySelectorAll(".reveal");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("visible");
+              observer.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.1 },
+      );
+      reveals.forEach((r) => observer.observe(r));
+
+      /* ── FAQ ── */
+      function toggleFAQ(el) {
+        const item = el.parentElement;
+        item.classList.toggle("open");
+      }
+
+      /* ── EMI CALCULATOR ── */
+      function calcEMI() {
+        const P = +document.getElementById("amt-range").value;
+        const rAnnual = +document.getElementById("rate-range").value;
+        const n = +document.getElementById("tenure-range").value;
+        const r = rAnnual / 12 / 100;
+        const emi =
+          r === 0
+            ? P / n
+            : (P * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+        const total = emi * n;
+        const interest = total - P;
+        const fmt = (v) => "₹" + Math.round(v).toLocaleString("en-IN");
+        document.getElementById("emi-display").textContent = fmt(emi);
+        document.getElementById("cr-principal").textContent = fmt(P);
+        document.getElementById("cr-interest").textContent = fmt(interest);
+        document.getElementById("cr-total").textContent = fmt(total);
+        document.getElementById("cr-tenure").textContent = n + " months";
+        document.getElementById("amt-display").textContent = fmt(P);
+        document.getElementById("rate-display").textContent = rAnnual + "%";
+        document.getElementById("tenure-display").textContent = n + " months";
+        // update range gradient
+        ["amt", "rate", "tenure"].forEach((k) => {
+          const el = document.getElementById(k + "-range");
+          const pct = ((el.value - el.min) / (el.max - el.min)) * 100;
+          el.style.background = `linear-gradient(to right,var(--green) ${pct}%,#ddd ${pct}%)`;
+        });
+      }
+      calcEMI();
+
+      /* ── SUBMIT ── */
+      function submitForm() {
+        const name = document.getElementById("f-name").value.trim();
+
+        const email = document.getElementById("f-email").value.trim();
+
+        const phone = document.getElementById("f-phone").value.trim();
+
+        const employment = document.getElementById("f-employ").value;
+
+        // VALIDATION
+        if (!name || !email || !phone || !employment) {
+          alert("Please fill all fields");
+          return;
+        }
+
+        // MOBILE VALIDATION
+        if (!/^[6-9]\d{9}$/.test(phone)) {
+          alert("Enter valid mobile number");
+          return;
+        }
+
+        // FAKE NUMBER BLOCK
+        const fakeNumbers = [
+          "9999999999",
+          "8888888888",
+          "7777777777",
+          "6666666666",
+          "5555555555",
+          "4444444444",
+          "3333333333",
+          "2222222222",
+          "1111111111",
+          "0000000000",
+          "1234567890",
+          "9876543210",
+        ];
+
+        if (fakeNumbers.includes(phone)) {
+          alert("Please enter a genuine mobile number");
+          return;
+        }
+
+        const btn = document.getElementById("final-submit");
+
+        btn.disabled = true;
+
+        // STEP 1
+        btn.innerHTML = `
+    <i class="fa-solid fa-spinner fa-spin"></i>
+    Checking Eligibility...
+  `;
+
+        // STEP 2
+        setTimeout(() => {
+          btn.innerHTML = `
+      <i class="fa-solid fa-spinner fa-spin"></i>
+      Verifying Details...
+    `;
+        }, 1500);
+
+        // STEP 3
+        setTimeout(() => {
+          btn.innerHTML = `
+      <i class="fa-solid fa-spinner fa-spin"></i>
+      Matching Loan Offers...
+    `;
+        }, 3000);
+
+        // FINAL RESULT
+        setTimeout(() => {
+          // OPEN MODAL
+          document.getElementById("success-modal").classList.add("open");
+
+          // ICON
+          document.querySelector(".modal-icon").innerHTML =
+            `<i class="fa-solid fa-circle-check"></i>`;
+
+          // TITLE
+          document.querySelector(".modal-box h2").innerHTML =
+            "✅ Eligibility Checked";
+
+          // DESCRIPTION
+          document.querySelector(".modal-box p").innerHTML = `
+      Based on your submitted details,
+      you are pre-qualified for loan
+      offers from our lending partners.
+
+      <br><br>
+
+      <small style="color:#888;">
+      Final approval depends on lender
+      verification and profile review.
+      </small>
+      `;
+
+          // RANDOM LIMIT
+          const limits = [
+            "₹50,000",
+            "₹1,00,000",
+            "₹2,50,000",
+            "₹3,00,000",
+            "₹5,00,000",
+          ];
+
+          const limit = limits[Math.floor(Math.random() * limits.length)];
+
+          document.getElementById("modal-ref-num").innerHTML =
+            `Pre-Qualified Amount: ${limit}`;
+
+          // CONTINUE BUTTON
+          document.querySelector(".modal-close").innerHTML = "Continue";
+
+          document.querySelector(".modal-close").onclick = function () {
+            window.location.href = "https://upstox.com/open-account/?f=6ZA67G";
+          };
+
+          // RESET BUTTON
+          btn.disabled = false;
+
+          btn.innerHTML = `
+      Check Free Eligibility
+      <i class="fa-solid fa-arrow-right"></i>
+    `;
+        }, 4500);
+      }
+
+      /* ── SELECT filled class ── */
+      document.querySelectorAll(".field select").forEach((sel) => {
+        sel.addEventListener("change", () =>
+          sel.classList.toggle("filled", sel.value !== ""),
+        );
+      });
     </script>
-    <script src="script.js"></script>
   </body>
 </html>
